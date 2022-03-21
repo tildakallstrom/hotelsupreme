@@ -1,0 +1,112 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - projekt</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+    <a class="headername" asp-area="" asp-controller="Home" asp-action="Index">Supreme
+</a>
+
+        <div class="headergrids2">
+      <div class="mobile">
+        <div class="ham" id="hamburger" onclick="hamburgermenu(this)">
+          <div class="lineone"></div>
+          <div class="linetwo"></div>
+          <div class="linethree"></div>
+        </div> 
+       <!-- mobilmenyns navigering -->
+         </div> 
+         <div class="navi">
+      <nav class="navbar">
+                <ul class="nav">
+                   
+                       <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Abouts" asp-action="Index">About</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Rooms" asp-action="Index">Rooms</a>
+                        </li>
+
+                          <!--if (SignInManager.IsSignedIn(User)) 
+                        {-->
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="Index">News</a>
+                        </li>
+                        <!--}-->
+                        
+                        
+                </ul>
+            </nav>
+            </div>
+        </div>
+
+
+                    
+               
+    </header>
+    <div class="container">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <h2 class="centerh2white">Hotel Supreme</h2>
+        <div class="footer">
+        <div class="fcontainer">
+            <h3>Navigate</h3>
+             <ul class="fnav">
+                   
+                       <li class="fnav-item">
+                            <a class="fnav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                         <li class="fnav-item">
+                            <a class="fnav-link" asp-area="" asp-controller="Abouts" asp-action="Index">About</a>
+                        </li>
+                         <li class="fnav-item">
+                            <a class="fnav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                         <li class="fnav-item">
+                            <a class="fnav-link" asp-area="" asp-controller="Rooms" asp-action="Index">Rooms</a>
+                        </li>
+
+                          <!--if (SignInManager.IsSignedIn(User)) 
+                        {-->
+                            <li class="fnav-item">
+                            <a class="fnav-link" asp-area="" asp-controller="Posts" asp-action="Index">News</a>
+                        </li>
+                        <!--}-->
+                        
+                        
+                </ul>
+            <partial name="_LoginPartial" />
+        </div>
+        <div class="fcontainer">
+            <h3>Hotel Supreme</h3>
+            <a class="link" href="mailto:hotel@supreme.com">hotel@supreme.com</a><br />
+            <a class="link" href="tel:08123456789">08-123456789</a>
+            <p>Hotel Supreme <br />
+                Supreme city 123<br />
+                12345 Supreme</p>
+        </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

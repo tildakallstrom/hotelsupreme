@@ -1,0 +1,109 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<projekt.Models.Posts>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>Hotel Supreme</h1>
+  </div>
+</div>
+
+    <img src="../images/hotel.jpg" class="headerimg" alt="header"/>
+
+<div class="text-center">
+    <h2>The best hotel in the world!</h2>
+    <p>Always happy costumers, supreme rooms, comfy beds and tasty breakfast!</p>
+    <p>To book our rooms, visit the Rooms-page and enjoy your stay!</p>
+</div>
+<div class="grid">
+    <div>
+        <h3 class="mh3">Take a swim!</h3>
+        <img src="../images/pool2.jpg" class="displayimg" alt="Pool" />
+        </div>
+        <div class="text">
+        <h3 class="ch3">Take a swim!</h3>
+        <p>Take a swim in one of our pools. We have a childrenspool, a hottub and
+            a big pool to take long swims in.
+        </p>
+        <p>Take a nice warm, relaxing bath in our hottub which always has 45c bubbling water
+            in it. Or you can take a long swim in our big pool which is 50metres long and
+            30metres wide. It is 10metres deep in one end and 1metre deep in the other end.
+            Our childrenspool is suitable for small children and is 20cm deep in one end and
+            50cm deep in the other end.
+ 
+        </p>
+        <p>Our pools are open everyday from 5 in the morning to 2 in the night!</p>
+        </div>
+</div>
+<div class="grid2">
+    <div class="text">
+         <h3 class="ch3">Eat well!</h3>
+        <p>Come to the restaurant and eat our supreme breakfast. Every morning we have
+            coffe, handpicked fruits, yoghurt, warm bread and a lot more!
+        </p>
+        <p>We have something for everyone!</p>
+        <p>Our reastaurant is open for you the following hours:</p>
+        <ul>
+            <li>Mondays 6-10</li>
+            <li>Tuesdays 6-10</li>
+            <li>Wednesdays 6-10</li>
+            <li>Thursdays 6-10</li>
+            <li>Fridays 6-10</li>
+            <li>Saturdays 6-11</li>
+            <li>Sundays 6-11</li>
+        </ul>
+        </div>
+        <div>
+         <img src="../images/breakfast.jpg" class="displayimg" alt="Breakfast"/>
+        </div>
+</div>
+<div class="grid3">
+     <div>
+         <h3 class="mh3">Eat well!</h3>
+         <img src="../images/breakfast.jpg" class="displayimg" alt="Breakfast"/>
+        </div>
+    <div class="text">
+         
+        <p>Come to the restaurant and eat our supreme breakfast. Every morning we have
+            coffe, handpicked fruits, yoghurt, warm bread and a lot more!
+        </p>
+        <p>We have something for everyone!</p>
+        <p>Our reastaurant is open for you the following hours:</p>
+        <ul>
+            <li>Mondays 6-10</li>
+            <li>Tuesdays 6-10</li>
+            <li>Wednesdays 6-10</li>
+            <li>Thursdays 6-10</li>
+            <li>Fridats 6-10</li>
+            <li>Saturdays 6-11</li>
+            <li>Sundays 6-11</li>
+        </ul>
+        </div>
+       </div>
+
+<div class="grid">
+    <div>
+        <h3 class="mh3">Supreme rooms!</h3>
+        <img src="../images/bed.jpg" class="displayimg" alt="Room" />
+        </div>
+        <div class="text">
+        <h3 class="ch3">Supreme rooms!</h3>
+        <p>We have supreme rooms with views over the pool and the sea, or
+            over the city. We have the comfiest beds so you will get a really good nights sleep.
+            All our rooms gets cleaned everyday and they have:
+        </p>
+        <ul>
+            <li>Wifi</li>
+            <li>Bathroom with bath and shower</li>
+            <li>Minibar</li>
+            <li>Balcony</li>
+        </ul>
+        <p>Check-in at 14-21 and check-out before 12.</p>
+        </div>
+</div>
+

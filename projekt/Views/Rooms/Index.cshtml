@@ -1,0 +1,36 @@
+﻿@model IEnumerable<projekt.Models.Rooms>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Rooms";
+}
+
+<img src="../images/hotel4.jpg" class="headerimg" alt="header"/>
+     <h1 class="centerh1">Our Rooms</h1>
+      <div class="text-center">
+          <h2 class="centerh2">We have rooms for everyone!</h2>
+         <p>
+           At Hotel Supreme we have rooms for the couple, the small family and the newly wed. We have a room for everyone!
+         </p>
+         </div>
+          <div class="text-center">
+<p>
+     @if(User.Identity.IsAuthenticated) {
+    <a asp-action="Create">Create New</a>
+    }
+</p>
+  
+@foreach (var item in Model) {
+        <h2> @Html.DisplayFor(modelItem => item.Name) </h2>
+         <p> @Html.DisplayFor(modelItem => item.Description) </p>
+         <img src="../images/@Html.DisplayFor(modelItem => item.Image)" class="listimg" alt="@Html.DisplayFor(modelItem => item.Name)" /> 
+            
+               @if(User.Identity.IsAuthenticated) { //show delete btn if user is logged in
+                        <form asp-action="Delete" method="post">
+                        <input type="hidden" value="@item.Id" name="Id" />
+                        <input type="image" class="icon" src="../images/delete.png" />
+                        </form>
+                    } 
+}
+</div>

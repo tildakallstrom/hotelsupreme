@@ -1,0 +1,43 @@
+﻿@model IEnumerable<projekt.Models.Posts>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<img src="../images/hotel5.jpg" class="headerimg" alt="header" />
+     <h1 class="centerh1">News</h1>
+      <div class="text-center">
+          <h2 class="centerh2">Read the latest news from Hotel Supreme!</h2>
+         <p>
+           On this page you can read about our hotel, and what happens every week.
+         </p>
+         </div>
+
+<div class="text-center">
+    @if(User.Identity.IsAuthenticated) {
+        <p>
+    <a asp-action="Create">Create New</a>
+    </p>
+    }
+
+
+@foreach (var item in Model) {
+        <h2>   @Html.DisplayFor(modelItem => item.Title) </h2>
+            <p>
+                @Html.DisplayFor(modelItem => item.Text)
+            </p>
+            
+                @if(item.ImageName != null) {  //show image if there is an image
+                        <img  class="listimg"  src="../images/thumb_@Html.DisplayFor(modelItem => item.ImageName)">
+                    } 
+               
+            <p>Contact the author at:
+                @Html.DisplayFor(modelItem => item.Author)
+            </p>
+            
+                 @if(item.Author == @User.Identity?.Name) { //show different buttons depending on whos logged in
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    } 
+            }
+   </div>

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/fc279a75-e51a-4b76-a50b-eced7b844a0a/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/hotelsupreme",
+    "appService.deploySubpath": "Publish"
+}
