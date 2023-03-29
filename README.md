@@ -6,5 +6,3 @@ Here you can login, register new accounts, change the info on the About-page, cr
 ## RoomAPI
 The code behind the roomAPI that is used for the Room-page: https://github.com/tildakallstrom/RoomAPI
 
-## Website
-Visit the website at: https://hotelsupreme.azurewebsites.net/
